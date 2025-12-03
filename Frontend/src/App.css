@@ -4,11 +4,10 @@
   width: 100%;
   position: relative;
   display: grid;
-  grid-template-columns: 10% 75% 15%;
+  grid-template-columns: 7.5% 75% 20%;
   grid-template-rows: auto 1fr;
   grid-template-areas:
-    "toolbox toolbox toolbox"
-    "slides viewport properties"
+    "slides toolbox properties"
     "slides viewport properties";
   padding: 3rem;
   margin-top: 2.5rem;
@@ -23,10 +22,11 @@
 .appSlides {
   z-index: 10000;
   grid-area: slides;
-
+  width: 150%;
 }
 
 .appViewport {
+  width: 110%;
   z-index: 10000;
   grid-area: viewport;
 }
@@ -34,4 +34,5 @@
 .appProperties {
   z-index: 10000;
   grid-area: properties;
+  width: 85%;
 }

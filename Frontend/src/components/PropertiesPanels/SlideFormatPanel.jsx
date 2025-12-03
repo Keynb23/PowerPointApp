@@ -1,17 +1,18 @@
-import React from 'react';
-import '../Prop.css'; // Requested import
+import '../Prop.css';
+
+
 
 const SlideFormatPanel = () => {
     return (
-        <div className="Panel-Content-Container">
+        <div className="Prop-Panel-Tabs-Container">
             <p>
                 **Slide Format:** Adjust background color, image, and overall master layout of the current slide.
             </p>
             <hr />
-            <p className="Placeholder-Control">
+            <p className="Prop-Panel-Tabs-Control">
                 Background & Layout:
             </p>
-            <ul className="Control-List">
+            <ul className="Prop-Panel-Tabs-List">
                 <li>Background Fill: [Dropdown: Solid, Gradient, Image]</li>
                 <li>Master Layout: [Template Picker/Dropdown]</li>
                 <li>Visibility: [Toggle Hide Background Objects]</li>

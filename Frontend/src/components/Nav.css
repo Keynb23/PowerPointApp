@@ -1,5 +1,6 @@
 /* /components/Nav.css (Updated for Dropdown Menus) */
-/* 1. Navbar Container and List                     */
+
+/* 1. Navbar Container and List                     */
 .Navbar {
     position: absolute; 
     top: 0;
@@ -9,71 +10,82 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center; /* Align items to the start for a traditional app bar look */
-    padding: 0.5rem 2rem; /* Reduced vertical padding */
+    justify-content: flex-start; 
+    padding: 0.5rem 2rem; 
     background-color: var(--bg); 
     border-bottom: var(--Border);
     box-shadow: var(--Shadow);
+    /* For Apple aesthetic, slightly blur the background */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .Nav-Items {
     list-style: none; 
     display: flex;
     align-items: center;
-    gap: 0.75rem; /* Reduced gap to bring menu items closer */
+    gap: 0.75rem; 
     padding: 0;
     margin: 0;
 }
 
-/* 2. Individual Nav Item (Trigger)                 */
+/* 2. Individual Nav Item (Trigger)                 */
 .Nav-List-Item {
-    position: relative; /* CRITICAL: Allows absolute positioning of the dropdown */
-    color: var(--fc);
+    position: relative; 
+    color: var(--pc); /* Use primary text color for better contrast */
     font-weight: 500;
     cursor: pointer;
     padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
     transition: background-color 0.2s, color 0.2s;
-    user-select: none; /* Prevent text selection on click */
+    user-select: none; 
 }
 
 /* Highlight for both hover and active/open state */
 .Nav-List-Item:hover,
 .Nav-List-Item.active { 
-    color: white; /* Optional: Make text stand out more when active */
+    background-color: rgba(72, 72, 74, 0.4); /* Subtly darker gray on hover/active */
+    color: var(--fc); /* Use pure white */
 }
 
-/* 3. Quick Save Button                             */
+/* 3. Quick Save Button                             */
 .quick-save-btn {
     display: block;
-    padding: .5rem .75rem; /* Adjusted padding to better align with list items */
+    padding: .5rem .75rem; 
     font-size: medium;
-    background-color: var(--sc); /* Give it a background for visibility */
-    border-radius: 0.25rem; /* Match list item radius */
+    background-color: var(--ac); /* Use the vibrant blue accent for the main action button */
+    border-radius: 0.35rem; /* Slightly larger radius */
     color: var(--fc);
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s;
-    margin-right: 1.5rem; /* Space between save button and first menu */
+    transition: background-color 0.2s, box-shadow 0.2s;
+    margin-right: 1.5rem; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .quick-save-btn:hover {
-    background-color: var(--ac);
+    background-color: #38A3FF; /* Lighter blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.quick-save-btn:active {
+    background-color: #007AFF; /* Default Apple Blue on press */
+    transform: translateY(1px);
+    box-shadow: none;
 }
 
-/* 4. Dropdown Menu Container (The actual menu)     */
+/* 4. Dropdown Menu Container (The actual menu)     */
 .Dropdown-Menu {
     position: absolute;
-    top: 100%; /* Position right below the trigger item */
+    top: 100%; 
     left: 0;
-    z-index: 20001; /* Higher than navbar for visibility */
+    z-index: 20001; 
     min-width: 180px;
-    background-color: var(--cbg); /* Use content background for the menu */
+    background-color: var(--cbg); 
     box-shadow: var(--Shadow);
-    border: 1px solid var(--sc);
-    border-radius: 0.25rem;
-    padding: 5px 0;
+    border: 1px solid rgba(72, 72, 74, 0.9); /* Slightly darker border for depth */
+    border-radius: 0.5rem; /* Increase border radius for a softer look */
+    padding: 4px 0; /* Slightly reduced vertical padding */
 }
 
 .Dropdown-Menu ul {
@@ -82,15 +94,18 @@
     margin: 0;
 }
 
-/* 5. Dropdown Menu Items                           */
+/* 5. Dropdown Menu Items                           */
 .Dropdown-Item {
     padding: 8px 15px;
     font-size: 0.95rem;
     cursor: pointer;
     color: var(--fc);
+    border-radius: 0.25rem; /* Apply radius to individual item for clean separation */
+    margin: 0 4px;
+    transition: background-color 0.1s, color 0.1s;
 }
 
 .Dropdown-Item:hover {
-    background-color: var(--ac);
+    background-color: var(--ac); /* Vibrant blue background on hover */
     color: white;
 }

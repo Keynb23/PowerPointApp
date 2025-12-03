@@ -1,17 +1,17 @@
-import React from 'react';
-import '../Prop.css'; // Requested import
+import '../Prop.css';
+
 
 const AnimationsPanel = () => {
     return (
-        <div className="Panel-Content-Container">
+        <div className="Prop-Panel-Tabs-Container">
             <p>
                 **Animations:** Define element entrance, emphasis, hover, clicking, other triggers, and exit animations for the selected object.
             </p>
             <hr />
-            <p className="Placeholder-Control">
+            <p className="Prop-Panel-Tabs-Control">
                 Animation Sequence:
             </p>
-            <ul className="Control-List">
+            <ul className="Prop-Panel-Tabs-List">
                 <li>Entrance: [Dropdown: Fly In, Zoom]</li>
                 <li>Emphasis: [Dropdown: Pulse, Spin]</li>
                 <li>Exit: [Dropdown: Fade Out, Shrink]</li>

@@ -1,3 +1,4 @@
+/* Viewport.css */
 
 .Viewport {
     height: 100%;
@@ -14,6 +15,7 @@
 }
 
 .Slide-Stage {
+    /* Responsive slide stage, centered in the viewport */
     width: 80%; 
     max-width: 1280px; 
     aspect-ratio: 16 / 9; /* Height is calculated based on 16:9 of the width */
@@ -26,6 +28,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    padding: 2rem; /* Inner padding for content */
 }
 
 
@@ -42,15 +45,41 @@
     margin-bottom: 1.5rem;
 }
 
+/* --- Enhanced Start Button Styling --- */
 .startbtn {
-  align-self: center;
-  justify-self: center;
-  display: block;
-  padding: 1.5rem;
-  border-radius: 15rem;
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: var(--pc);
-  box-shadow: var(--Shadow);
-  border: none;
+    align-self: center;
+    justify-self: center;
+    display: block;
+    padding: 1rem 2.5rem; /* Professional padding */
+    border-radius: 0.5rem; /* Modern rounded corners */
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    
+    /* Use accent color for main call to action */
+    background-color: var(--ac);
+    color: var(--bg); /* Dark text on bright button */
+    
+    border: none; 
+    box-shadow: var(--Shadow);
+    transition: all 0.2s ease-in-out;
+    
+    /* Optional: Use a subtle inset border for depth */
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+}
+
+.startbtn:hover {
+    /* Slightly lighten or shift the accent color on hover */
+    background-color: rgb(70, 170, 255); 
+    /* Subtle lift effect */
+    box-shadow: rgba(50, 50, 93, 0.4) 0px 10px 20px -5px,
+                rgba(0, 0, 0, 0.6) 0px 5px 10px -5px;
+    transform: translateY(-2px); 
+}
+
+.startbtn:active {
+    /* Push the button down on click */
+    transform: translateY(1px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+    background-color: rgb(40, 140, 240);
 }

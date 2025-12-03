@@ -1,16 +1,17 @@
-import '../Prop.css'; // Requested import
+import '../Prop.css';
+
 
 const PresentationPanel = () => {
     return (
-        <div className="Panel-Content-Container">
+        <div className="Prop-Panel-Tabs-Container">
             <p>
                 **Presentation Details:** Set overall document properties, title, author, and global slide size.
             </p>
             <hr />
-            <p className="Placeholder-Control">
+            <p className="Prop-Panel-Tabs-Control">
                 Project Metadata & Sizing:
             </p>
-            <ul className="Control-List">
+            <ul className="Prop-Panel-Tabs-List">
                 <li>Document Title: [Input Field]</li>
                 <li>Author Name: [Input Field]</li>
                 <li>Aspect Ratio: [Dropdown 16:9, 4:3, Custom]</li>
