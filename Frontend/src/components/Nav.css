@@ -1,111 +1,123 @@
-/* /components/Nav.css (Updated for Dropdown Menus) */
+/* /components/Nav.css (Updated for Global Styles Consistency) */
 
-/* 1. Navbar Container and List                     */
+/* 1. Navbar Container and List   */
 .Navbar {
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 20000; 
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-start; 
-    padding: 0.5rem 2rem; 
-    background-color: var(--bg); 
-    border-bottom: var(--Border);
-    box-shadow: var(--Shadow);
-    /* For Apple aesthetic, slightly blur the background */
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20000; /* High Z-index to sit above the main content and Toolbar */
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem 2rem;
+  background-color: var(--bg);
+  border-bottom: var(--Border);
+  box-shadow: var(--Shadow);
+  /* For Apple aesthetic, slightly blur the background */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .Nav-Items {
-    list-style: none; 
-    display: flex;
-    align-items: center;
-    gap: 0.75rem; 
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
 }
 
-/* 2. Individual Nav Item (Trigger)                 */
+/* 2. Individual Nav Item (Trigger)   */
 .Nav-List-Item {
-    position: relative; 
-    color: var(--pc); /* Use primary text color for better contrast */
-    font-weight: 500;
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.25rem;
-    transition: background-color 0.2s, color 0.2s;
-    user-select: none; 
+  /* position: relative; REMOVED from <li> in previous fix */
+  color: var(--pc);
+  /* Use primary text color for better contrast */
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s, color 0.2s;
+  user-select: none;
 }
 
 /* Highlight for both hover and active/open state */
 .Nav-List-Item:hover,
-.Nav-List-Item.active { 
-    background-color: rgba(72, 72, 74, 0.4); /* Subtly darker gray on hover/active */
-    color: var(--fc); /* Use pure white */
+.Nav-List-Item.active {
+  background-color: rgba(72, 72, 74, 0.4);
+  /* Subtly darker gray on hover/active */
+  color: var(--fc);
+  /* Use pure white */
 }
 
-/* 3. Quick Save Button                             */
+/* 3. Quick Save Button    */
 .quick-save-btn {
-    display: block;
-    padding: .5rem .75rem; 
-    font-size: medium;
-    background-color: var(--ac); /* Use the vibrant blue accent for the main action button */
-    border-radius: 0.35rem; /* Slightly larger radius */
-    color: var(--fc);
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s, box-shadow 0.2s;
-    margin-right: 1.5rem; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: .5rem .75rem;
+  font-size: medium;
+  background-color: var(--ac);
+  /* Use the vibrant blue accent for the main action button */
+  border-radius: 0.35rem;
+  /* Slightly larger radius */
+  color: var(--fc);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  margin-right: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .quick-save-btn:hover {
-    background-color: #38A3FF; /* Lighter blue on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: #38A3FF;
+  /* Lighter blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
+
 .quick-save-btn:active {
-    background-color: #007AFF; /* Default Apple Blue on press */
-    transform: translateY(1px);
-    box-shadow: none;
+  background-color: #007AFF;
+  /* Default Apple Blue on press */
+  transform: translateY(1px);
+  box-shadow: none;
 }
 
-/* 4. Dropdown Menu Container (The actual menu)     */
+.dropdown-wrapper {
+ position: relative; /* Anchor for absolute positioning of dropdown */
+ display: flex;
+ align-items: center;
+}
+
+/* 4. Dropdown Menu Container (The actual menu) */
 .Dropdown-Menu {
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    z-index: 20001; 
-    min-width: 180px;
-    background-color: var(--cbg); 
-    box-shadow: var(--Shadow);
-    border: 1px solid rgba(72, 72, 74, 0.9); /* Slightly darker border for depth */
-    border-radius: 0.5rem; /* Increase border radius for a softer look */
-    padding: 4px 0; /* Slightly reduced vertical padding */
+position: absolute;
+  /* Position below the Nav-List-Item */
+top: 100%; 
+left: 0;
+z-index: 20001; /* Must be higher than Navbar and other elements */
+min-width: 180px;
+background-color: var(--cbg);
+box-shadow: var(--Shadow);
+border: 1px solid rgba(72, 72, 74, 0.9);
+border-radius: 0.5rem;
+padding: 4px 0; /* Padding for the container */
+margin: 0;
+list-style: none;
 }
 
-.Dropdown-Menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* 5. Dropdown Menu Items                           */
+/* 5. Dropdown Menu Items     */
 .Dropdown-Item {
-    padding: 8px 15px;
-    font-size: 0.95rem;
-    cursor: pointer;
-    color: var(--fc);
-    border-radius: 0.25rem; /* Apply radius to individual item for clean separation */
-    margin: 0 4px;
-    transition: background-color 0.1s, color 0.1s;
+  /* Removed z-index: 20001; - only needed on the container */
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--fc);
+  /* Removed border-radius and margin for full-width hover effect */
+  transition: background-color 0.1s, color 0.1s;
 }
 
 .Dropdown-Item:hover {
-    background-color: var(--ac); /* Vibrant blue background on hover */
-    color: white;
+  background-color: var(--ac);
+  /* Vibrant blue background on hover */
+  color: white;
 }

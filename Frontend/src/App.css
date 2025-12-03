@@ -16,23 +16,19 @@
 
 .appToolbox {
   grid-area: toolbox;
-  z-index: 100000;
 }
 
 .appSlides {
-  z-index: 10000;
   grid-area: slides;
   width: 150%;
 }
 
 .appViewport {
   width: 110%;
-  z-index: 10000;
   grid-area: viewport;
 }
 
 .appProperties {
-  z-index: 10000;
   grid-area: properties;
   width: 85%;
 }

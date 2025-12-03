@@ -1,97 +1,96 @@
 /* /Slides.css (Slide Sidebar Menu Styles) */
 
 .Slide-Menu {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    /* Use content background for the entire menu area */
-    background-color: var(--cbg); 
-    box-shadow: var(--Shadow);
-    border: var(--Border);
-    border-radius: 0.5rem;
-    height: 100%;
+ padding: 1rem;
+ display: flex;
+ flex-direction: column;
+ gap: .5rem;
+ /* Use content background for the entire menu area */
+ background-color: var(--cbg); 
+ box-shadow: var(--Shadow);
+ border: var(--Border);
+ border-radius: 0.5rem;
+ height: 100%;
 }
 
 .Slide-Menu-Title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--fc);
-    flex-shrink: 0; 
-    padding-bottom: 0.5rem; /* Add separation below the title */
-    border-bottom: 1px solid var(--sc);
+ font-size: 1.2rem;
+ font-weight: 600;
+ margin-bottom: 1rem;
+ color: var(--fc);
+ flex-shrink: 0; 
+ padding-bottom: 0.5rem; /* Add separation below the title */
+ border-bottom: 1px solid var(--sc);
 }
 
 .Slide-List {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    height: auto;
-    overflow-y: auto; /* Enables vertical scrolling for the slide list */
-    flex-grow: 1;
-    /* This class is also targeted by the custom scrollbar in index.css */
+ display: flex;
+ flex-direction: column;
+ gap: .5rem;
+ /* height: auto; - Removed this */
+ overflow-y: auto; /* Enables vertical scrolling for the slide list */
+ flex-grow: 1; /* CRITICAL: This makes the list consume all available vertical space */
+ /* This class is also targeted by the custom scrollbar in index.css */
 }
 
 /* --- Individual Slide Preview Box --- */
 .slide-prev-box {
-    width: 90%;
-    max-width: 200px; /* Optional: cap size for large screens */
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio for the preview */
-    background-color: var(--bg); /* Darker background inside the preview for contrast */
-    box-shadow: none; /* Remove shadow from box, keep it on the container */
-    border: 2px solid transparent; /* Default transparent border */
-    border-radius: 0.35rem; /* Slightly smaller radius than the menu */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
-    margin: 0.25rem auto; /* Center in the list */
-    transition: all 0.2s ease-in-out;
-    color: var(--pc);
+ width: 90%;
+ max-width: 200px; /* Optional: cap size for large screens */
+ aspect-ratio: 16 / 9; /* Maintain aspect ratio for the preview */
+ background-color: var(--bg); /* Darker background inside the preview for contrast */
+ box-shadow: none; /* Remove shadow from box, keep it on the container */
+ border: 2px solid transparent; /* Default transparent border */
+ border-radius: 0.35rem; /* Slightly smaller radius than the menu */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ flex-shrink: 0;
+ margin: 0.25rem auto; /* Center in the list */
+ transition: all 0.2s ease-in-out;
+ color: var(--pc);
 }
 
 .slide-prev-box:hover {
-    border-color: var(--sc); /* Subtle secondary color on hover */
+ border-color: var(--sc); /* Subtle secondary color on hover */
 }
 
 /* Selected Slide State (Apple style: vibrant border and light glow) */
 .slide-prev-box.active {
-    border-color: var(--ac); /* Highlight with the Accent Blue */
-    /* Add a subtle blue shadow/glow for selection emphasis */
-    box-shadow: 0 0 10px rgba(10, 132, 255, 0.4); 
+ border-color: var(--ac); /* Highlight with the Accent Blue */
+ /* Add a subtle blue shadow/glow for selection emphasis */
+ box-shadow: 0 0 10px rgba(10, 132, 255, 0.4); 
 }
 
 
 /* --- Add Slide Button (Ghost Button Style) --- */
 .Add-Slide-Box {
-    /* Use the accent color for the button text (Ghost Button style) */
-    color: var(--ac); 
-    background-color: transparent; /* Makes it a ghost button */
-    
-    /* Standard button properties */
-    padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    border: 2px solid var(--ac); /* Blue border for the ghost button */
-    box-shadow: none; /* Removed the deep shadow for a cleaner look */
-    border-radius: 0.5rem; 
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
+ color: var(--ac); 
+ background-color: transparent; /* Makes it a ghost button */
+ padding: 0.5rem 1rem;
+ margin: 0.5rem auto 0 auto; /* Center the button and add top margin, but no bottom margin */
+ border: 2px solid var(--ac); /* Blue border for the ghost button */
+ box-shadow: none; /* Removed the deep shadow for a cleaner look */
+ border-radius: 0.5rem; 
+ font-weight: 600;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ flex-shrink: 0; /* Ensures the button never shrinks */
+ width: 90%; /* Give it a consistent width */
+ max-width: 200px;
 }
 
 .Add-Slide-Box:hover {
-    /* Fill with solid color on hover for strong feedback */
-    background-color: var(--ac);
-    color: var(--fc); /* White text on blue background */
-    border-color: var(--ac);
-    box-shadow: 0 2px 5px rgba(10, 132, 255, 0.3);
+ /* Fill with solid color on hover for strong feedback */
+ background-color: var(--ac);
+ color: var(--fc); /* White text on blue background */
+ border-color: var(--ac);
+ box-shadow: 0 2px 5px rgba(10, 132, 255, 0.3);
 }
 .Add-Slide-Box:active {
-    /* Subtle shift down on press */
-    background-color: #007AFF; 
-    transform: translateY(1px);
-    box-shadow: none;
+ /* Subtle shift down on press */
+ background-color: #007AFF; 
+ transform: translateY(1px);
+ box-shadow: none;
 }
