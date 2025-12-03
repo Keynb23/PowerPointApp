@@ -1,0 +1,56 @@
+
+.Viewport {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    overflow: hidden; 
+    min-height: auto; 
+    flex: none;
+    margin: 0;
+}
+
+.Slide-Stage {
+    width: 80%; 
+    max-width: 1280px; 
+    aspect-ratio: 16 / 9; /* Height is calculated based on 16:9 of the width */
+    background-color: var(--cbg); 
+    box-shadow: var(--Shadow);
+    border: var(--Border);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.TitleH {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--fc);
+    margin-bottom: 0.5rem;
+}
+
+.SubtitleP {
+    font-size: 1rem;
+    color: var(--pc);
+    margin-bottom: 1.5rem;
+}
+
+.startbtn {
+  align-self: center;
+  justify-self: center;
+  display: block;
+  padding: 1.5rem;
+  border-radius: 15rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--pc);
+  box-shadow: var(--Shadow);
+  border: none;
+}

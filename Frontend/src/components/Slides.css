@@ -1,0 +1,78 @@
+/* /Slides.css (This is where users should be able to scroll on the Y axis
+) */
+.Slide-Menu {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    box-shadow: var(--Shadow);
+    border: var(--Border);
+    border-radius: 0.5rem;
+    height: 100%;
+}
+
+.Slide-Menu-Title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--fc);
+    flex-shrink: 0; 
+}
+
+.Slide-List {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    height: auto;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.slide-prev-box {
+    width: 90%;
+    height: 6rem;
+    background-color: var(--cbg);
+    box-shadow: var(--Shadow);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.Add-Slide-Box {
+    padding: 0.5rem 1rem;
+    border: none;
+    box-shadow: var(--Shadow);
+    border-radius: 0.3rem;
+    color: var(--bg);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.Add-Slide-Box:hover {
+    border: 2px solid var(--ac);
+}
+.Add-Slide-Box:active {
+    border: 2px solid var(--pc);
+}
+
+.new-slide-div-class {
+    width: 90%;
+    height: 6rem;
+    background-color: var(--cbg);
+    box-shadow: var(--Shadow);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.new-slide-div-class:hover {
+    border: 2px solid var(--ac);
+}
+

@@ -1,0 +1,42 @@
+/* App.css (This is just for the locations of the components) */
+.App-Container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "toolbox toolbox toolbox"
+    "slides viewport properties"
+    "slides viewport properties";
+  padding: 2rem;
+  margin-top: 2.5rem;
+}
+
+.appToolbox {
+  grid-area: toolbox;
+  z-index: 10000;
+
+}
+
+.appSlides {
+  z-index: 10000;
+  grid-area: slides;
+  /* min-height: 100%; */
+}
+
+.appViewport {
+  z-index: 10000;
+  
+  grid-area: viewport;
+  /* min-height: 100vh; */
+}
+
+.appProperties {
+  z-index: 10000;
+
+  grid-area: properties;
+  /* min-height: 100vh; */
+
+}

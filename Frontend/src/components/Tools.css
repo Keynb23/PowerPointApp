@@ -1,0 +1,53 @@
+.Tool-Bar {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.Tool-Items {
+    display: flex;
+    width: auto;
+    gap: 1rem;
+    padding: .75rem;
+    background-color: var(--cbg);
+    box-shadow: var(--Shadow);
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.Tool-Bar-Title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 5rem;
+}
+
+.Tool-Item-List {
+    display: flex;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.Tools {
+    padding: 0.5rem 1rem;
+    background-color: none;
+    border: none;
+    box-shadow: var(--Shadow);
+    border-radius: 0.3rem;
+    color: var(--fc);
+    font-weight: 400;
+    font-size: .95 rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Tools:hover {
+    background-color: var(--ac);
+}
+
+.Tools:active {
+    background-color: var(--pc);
+    color: var(--bg);
+}
+

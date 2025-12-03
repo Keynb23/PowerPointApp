@@ -1,0 +1,54 @@
+.Navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20000; /* High Z-index to ensure it sits above everything */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center; /* Center the list of items */
+    padding: 1rem 2rem;
+    background-color: var(--bg); /* Use content background for the navbar strip */
+    border-bottom: var(--Border);
+    box-shadow: var(--Shadow);
+}
+
+.Nav-Items {
+    list-style: none; 
+    display: flex;
+    align-items: center;
+    gap: 3rem; 
+    padding: 0;
+    margin: 0;
+}
+
+.Nav-List-Item {
+    color: var(--fc);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.Nav-List-Item:hover {
+    background-color: var(--ac);
+}
+
+.Nav-List-Item:active {
+    background-color: var(--sc);
+}
+
+.quick-save-btn {
+    display: block;
+    padding: .25rem;
+    font-size: medium;
+    background-color: transparent;
+    border-radius: 5rem;
+    color: var(--fc);
+    font-weight: 600;
+    border: none;
+}
+
+
