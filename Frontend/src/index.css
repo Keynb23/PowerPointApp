@@ -29,9 +29,6 @@ body, html, #root {
     /* placeholder border for page setup */
   --PHBorder: 3px solid red;
 }
-/* Buttons */
-
-
 
 /* Custom Scrollbar Styles for Slides and Properties */
 /* Target the scrollable containers */

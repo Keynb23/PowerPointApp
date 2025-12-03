@@ -2,7 +2,7 @@
 .Viewport {
     height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: .5rem;
     display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */

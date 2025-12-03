@@ -1,53 +1,124 @@
+/* /components/Tools.css (Updated with Z-index Fix for Hover Issue) */
+
+/* 1. Main Container and Positioning    */
+.Tool-Bar-Wrapper {
+ display: flex;
+ justify-content: center;
+ padding-top: 1rem;
+}
+
 .Tool-Bar {
-    display: flex;
-    width: 100%;
-    gap: 2rem;
-    justify-content: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: auto;
+ padding: 0.75rem;
+ background-color: var(--cbg);
+ box-shadow: var(--Shadow);
+ border: 1px solid var(--sc);
+ border-radius: 0.5rem;
+    /* FIX: Set a very high Z-index for the entire toolbar */
+    z-index: 2000; 
+
 }
 
+/* 2. Tool Buttons List & Item Container   */
 .Tool-Items {
-    display: flex;
-    width: auto;
-    gap: 1rem;
-    padding: .75rem;
-    background-color: var(--cbg);
-    box-shadow: var(--Shadow);
-    border-radius: 0.5rem;
-    align-items: center;
-    justify-content: center;
+ display: flex;
+ gap: 0.5rem;
+ list-style: none;
+ padding: 0;
+ margin: 0;
+
 }
 
-.Tool-Bar-Title {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-right: 5rem;
+/* New container to manage the dropdown's position relative to its trigger button */
+.Tool-Item-Container {
+ position: relative;
+ display: flex;
 }
 
-.Tool-Item-List {
-    display: flex;
-    text-align: center;
-    line-height: 1.5rem;
+/* 3. Individual Tool Button (Icon Button)    */
+.Tool-Button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 35px;
+ height: 35px;
+ padding: 5px;
+ background-color: transparent;
+ border: none;
+ border-radius: 0.25rem;
+ color: var(--fc);
+ cursor: pointer;
+ transition: background-color 0.2s ease, color 0.2s ease;
+    /* REMOVED: z-index: 1010; (Handled by parent .Tool-Bar) */
 }
 
-.Tools {
-    padding: 0.5rem 1rem;
-    background-color: none;
-    border: none;
-    box-shadow: var(--Shadow);
-    border-radius: 0.3rem;
-    color: var(--fc);
-    font-weight: 400;
-    font-size: .95 rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Style for dropdown buttons to show the caret */
+.Tool-Button.dropdown {
+ width: auto;
+ padding-right: 8px;
+    /* REMOVED: z-index: 1010; (Handled by parent .Tool-Bar) */
 }
 
-.Tools:hover {
-    background-color: var(--ac);
+.Dropdown-Caret {
+ margin-left: 5px;
 }
 
-.Tools:active {
-    background-color: var(--pc);
-    color: var(--bg);
+.Tool-Button:hover {
+ background-color: var(--sc);
+ color: var(--ac);
 }
 
+.Tool-Button:active,
+.Tool-Button.active {
+ background-color: var(--ac);
+ color: var(--bg);
+}
+
+/* 4. Dropdown Menu Styles        */
+.Tool-Dropdown-Menu {
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 2001; /* Should be slightly higher than the toolbar for safety */
+ min-width: 180px;
+ margin-top: 5px;
+ background-color: var(--cbg);
+ box-shadow: var(--Shadow);
+ border: 1px solid var(--sc);
+ border-radius: 0.25rem;
+ padding: 5px 0;
+}
+
+.Tool-Dropdown-List {
+ list-style: none;
+ padding: 0;
+ margin: 0;
+    /* RETAINED FIX: Ensures proper block display */
+ display: block;
+}
+
+.Tool-Dropdown-Item {
+    /* RETAINED FIX: Ensures the whole list item registers hover */
+ display: block;
+ padding: 8px 15px;
+ font-size: 0.95rem;
+ cursor: pointer;
+ color: var(--fc);
+ white-space: nowrap;
+ transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.Tool-Dropdown-Item:hover {
+ background-color: var(--ac);
+ color: white;
+}
+
+/* NEW: Separator Style */
+.Tool-Dropdown-Separator {
+ height: 1px;
+ background-color: var(--sc);
+ margin: 5px 0;
+}

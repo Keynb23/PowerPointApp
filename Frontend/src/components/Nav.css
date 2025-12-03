@@ -1,15 +1,17 @@
+/* /components/Nav.css (Updated for Dropdown Menus) */
+/* 1. Navbar Container and List                     */
 .Navbar {
     position: absolute; 
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20000; /* High Z-index to ensure it sits above everything */
+    z-index: 20000; 
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center; /* Center the list of items */
-    padding: 1rem 2rem;
-    background-color: var(--bg); /* Use content background for the navbar strip */
+    justify-content: center; /* Align items to the start for a traditional app bar look */
+    padding: 0.5rem 2rem; /* Reduced vertical padding */
+    background-color: var(--bg); 
     border-bottom: var(--Border);
     box-shadow: var(--Shadow);
 }
@@ -18,37 +20,77 @@
     list-style: none; 
     display: flex;
     align-items: center;
-    gap: 3rem; 
+    gap: 0.75rem; /* Reduced gap to bring menu items closer */
     padding: 0;
     margin: 0;
 }
 
+/* 2. Individual Nav Item (Trigger)                 */
 .Nav-List-Item {
+    position: relative; /* CRITICAL: Allows absolute positioning of the dropdown */
     color: var(--fc);
     font-weight: 500;
     cursor: pointer;
     padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
     transition: background-color 0.2s, color 0.2s;
+    user-select: none; /* Prevent text selection on click */
 }
 
-.Nav-List-Item:hover {
-    background-color: var(--ac);
+/* Highlight for both hover and active/open state */
+.Nav-List-Item:hover,
+.Nav-List-Item.active { 
+    color: white; /* Optional: Make text stand out more when active */
 }
 
-.Nav-List-Item:active {
-    background-color: var(--sc);
-}
-
+/* 3. Quick Save Button                             */
 .quick-save-btn {
     display: block;
-    padding: .25rem;
+    padding: .5rem .75rem; /* Adjusted padding to better align with list items */
     font-size: medium;
-    background-color: transparent;
-    border-radius: 5rem;
+    background-color: var(--sc); /* Give it a background for visibility */
+    border-radius: 0.25rem; /* Match list item radius */
     color: var(--fc);
     font-weight: 600;
     border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 1.5rem; /* Space between save button and first menu */
 }
 
+.quick-save-btn:hover {
+    background-color: var(--ac);
+}
 
+/* 4. Dropdown Menu Container (The actual menu)     */
+.Dropdown-Menu {
+    position: absolute;
+    top: 100%; /* Position right below the trigger item */
+    left: 0;
+    z-index: 20001; /* Higher than navbar for visibility */
+    min-width: 180px;
+    background-color: var(--cbg); /* Use content background for the menu */
+    box-shadow: var(--Shadow);
+    border: 1px solid var(--sc);
+    border-radius: 0.25rem;
+    padding: 5px 0;
+}
+
+.Dropdown-Menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 5. Dropdown Menu Items                           */
+.Dropdown-Item {
+    padding: 8px 15px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--fc);
+}
+
+.Dropdown-Item:hover {
+    background-color: var(--ac);
+    color: white;
+}
